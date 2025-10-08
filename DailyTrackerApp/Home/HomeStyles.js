@@ -13,13 +13,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    padding: 15,
+    backgroundColor: '#cccccc', // gray background for the header
+    borderRadius: 10, 
     marginBottom: 30,
   },
 
   headerText: {
-    fontSize: 22,
-    fontWeight: '700',
-    color: '#4A80F0',
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#000000',
+    shadowColor: '#159adcff',
   },
 
   profileBtn: {
@@ -36,13 +40,17 @@ const styles = StyleSheet.create({
   },
 
   welcomeText: {
-    fontSize: 24,
-    fontWeight: '600',
-    marginBottom: 20,
-    color: '#333',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+  fontSize: 24,
+  fontWeight: '700',
+  color: '#333',
+  textAlign: 'center',       // ✅ centers text horizontally
+  alignSelf: 'center',       // ✅ ensures it's centered in the container
+  marginBottom: 20,
+  textShadowColor: 'rgba(0, 0, 0, 0.3)', // ✅ subtle shadow
+  textShadowOffset: { width: 2, height: 2 },
+  textShadowRadius: 3,
+},
+
 
   quoteContainer: {
     flexDirection: 'row',
