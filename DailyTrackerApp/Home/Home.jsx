@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import styles from './HomeStyles';
 
-const Home = ({ user, onBackToLogin, onOpenToDo }) => {
+const Home = ({ user, onBackToLogin, onOpenToDo, onOpenHabit }) => {
   return (
     <View style={styles.container}>
       {/* Header */}
@@ -38,7 +38,7 @@ const Home = ({ user, onBackToLogin, onOpenToDo }) => {
           source={{ uri: 'https://cdn-icons-png.flaticon.com/512/1484/1484428.png' }}
           style={{ width: 50, height: 50, marginBottom: 10 }}
         />
-        <TouchableOpacity style={styles.mainBtn}>
+        <TouchableOpacity style={styles.mainBtn} onPress={onOpenHabit}>
           <Text style={styles.mainBtnText}>Habit Tracker</Text>
         </TouchableOpacity>
       </View>
