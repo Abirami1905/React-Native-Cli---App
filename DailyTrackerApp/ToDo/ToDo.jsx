@@ -54,7 +54,7 @@ const ToDo = ({ onBack }) => {
           <Text style={styles.addBtnTxt}>Add</Text>
         </TouchableOpacity>
       </View>
-
+      
       {/* Task List */}
       <FlatList
         data={tasks}
