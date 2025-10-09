@@ -4,30 +4,30 @@ import Login from './src/screens/Login';
 import SignUp from './src/screens/SignUp';
 import Home from './src/screens/Home';
 import ToDo from './src/screens/ToDo';
+import Habit from './src/screens/Habit';
 
 export default function App() {
-  const [showSignUp, setShowSignUp] = useState(false); // controls SignUp screen
-  const [currentScreen, setCurrentScreen] = useState('login'); // 'login' | 'home' | 'todo'
-  const [userData, setUserData] = useState(null); // stores signed-up user info
+  const [showSignUp, setShowSignUp] = useState(false);
+  const [currentScreen, setCurrentScreen] = useState('login');
+  const [userData, setUserData] = useState(null);
 
-  // Save user after signup
   const handleSignUp = (newUser) => {
-    setUserData(newUser);       // store new user
-    setShowSignUp(false);       // go back to login
+    setUserData(newUser);
+    setShowSignUp(false);
   };
 
-  // Validate login credentials
   const handleLogin = (email, password) => {
-    if (!userData) return false; // no user registered
+    if (!userData) return false;
+
     if (userData.email === email && userData.password === password) {
-      setCurrentScreen('home');  // successful login → go to Home
+      setCurrentScreen('home');
       return true;
     }
-    return false;               // login failed
+    return false;
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#ffffff' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar barStyle="dark-content" />
 
       {currentScreen === 'login' && (
@@ -49,6 +49,7 @@ export default function App() {
           user={userData}
           onBackToLogin={() => setCurrentScreen('login')}
           onOpenToDo={() => setCurrentScreen('todo')}
+          onOpenHabit={() => setCurrentScreen('habit')}
         />
       )}
 
@@ -58,6 +59,16 @@ export default function App() {
           onBack={() => setCurrentScreen('home')}
         />
       )}
+
+
+      {
+        currentScreen === 'habit' && (
+          <Habit
+            user ={userData}
+            onBack={()=> setCurrentScreen('home')}
+          />
+        )
+      }
     </SafeAreaView>
   );
 }
