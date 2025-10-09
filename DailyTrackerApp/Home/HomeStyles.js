@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   textShadowRadius: 3,
 },
 
-
+/*
   quoteContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     color: '#555',
     flexShrink: 1,
   },
-
+*/
   mainBtn: {
     width: '100%',
     height: 50,
